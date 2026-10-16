@@ -1,6 +1,21 @@
-@TaskApi_HostAddress = http://localhost:5132
+@host = https://localhost:7092
 
-GET {{TaskApi_HostAddress}}/weatherforecast/
+### Создать задачу
+POST {{host}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Buy beer",
+  "priority": 2 
+}
+
+### Список всех задач
+GET {{host}}/tasks
 Accept: application/json
 
-###
+### Завершить задачу
+PUT {{host}}/tasks/e84783db-b62f-4df0-a399-60d236ea30fa/complete
+Accept: application/json
+
+### Удалить задачу
+DELETE {{host}}/tasks/00000000-0000-0000-0000-000000000000
