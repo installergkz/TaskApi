@@ -53,3 +53,5 @@ lifetime.ApplicationStopping.Register(() =>
 });
 
 app.Run();
+
+public partial class Program { }
